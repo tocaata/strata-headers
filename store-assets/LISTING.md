@@ -76,7 +76,7 @@ Modify HTTP request headers, response headers and redirect URLs according to use
 Does NOT collect any user data. 勾选三项合规声明(不出售数据 / 不用于与单一用途无关的目的 / 不用于信用评估或借贷)。
 
 **Privacy policy URL**(直接填这个):
-https://github.com/toccata-yy-lista/strata-headers/blob/main/PRIVACY.md
+https://github.com/tocaata/strata-headers/blob/main/PRIVACY.md
 
 ---
 
