@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
 import { Dialog, Switch, Tooltip } from 'radix-ui'
-import { PlusIcon } from '@radix-ui/react-icons'
+import { MoonIcon, PlusIcon, SunIcon } from '@radix-ui/react-icons'
 import type { AppState, Profile } from '../shared/types'
 import {
   loadState,
   loadSyncError,
+  loadTheme,
   onStateChanged,
   onSyncErrorChanged,
   saveState,
+  saveTheme,
   uid,
+  type Theme,
 } from '../shared/storage'
 import { profilesToRules } from '../shared/rules'
 import { ProfilePanel } from './ProfilePanel'
@@ -28,7 +31,18 @@ export function App() {
   const [activeId, setActiveId] = useState<string | null>(null)
   const [syncError, setSyncError] = useState<string | null>(null)
   const [addOpen, setAddOpen] = useState(false)
+  const [theme, setTheme] = useState<Theme>(() =>
+    window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark',
+  )
   const lastSaved = useRef('')
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+  }, [theme])
+
+  useEffect(() => {
+    void loadTheme().then((t) => t && setTheme(t))
+  }, [])
 
   useEffect(() => {
     void loadState().then((s) => {
@@ -107,6 +121,18 @@ export function App() {
               <p>PER-SITE HEADER CONTROL</p>
             </div>
           </div>
+          <div className="topbar-right">
+          <button
+            className="icon-btn theme-btn"
+            aria-label="Toggle light/dark theme"
+            onClick={() => {
+              const next: Theme = theme === 'dark' ? 'light' : 'dark'
+              setTheme(next)
+              void saveTheme(next)
+            }}
+          >
+            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </button>
           <Tooltip.Root>
             <Tooltip.Trigger asChild>
               <label className="master">
@@ -125,6 +151,7 @@ export function App() {
               </Tooltip.Content>
             </Tooltip.Portal>
           </Tooltip.Root>
+          </div>
         </header>
 
         <nav className="chips">

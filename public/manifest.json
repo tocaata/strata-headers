@@ -1,10 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Strata — Per-Site Header Rules",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Modify request headers, response headers and redirect URLs, with rules isolated per site.",
-  "permissions": ["declarativeNetRequest", "storage"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "declarativeNetRequest",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "background": {
     "service_worker": "background.js",
     "type": "module"

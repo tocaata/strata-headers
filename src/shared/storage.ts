@@ -53,6 +53,25 @@ export function onStateChanged(cb: (state: AppState) => void): () => void {
   return () => chrome.storage.onChanged.removeListener(listener)
 }
 
+export type Theme = 'dark' | 'light'
+
+/** Stored UI theme; null = follow the system preference. */
+export async function loadTheme(): Promise<Theme | null> {
+  if (hasChrome) {
+    const res = await chrome.storage.local.get('theme')
+    return (res.theme as Theme | undefined) ?? null
+  }
+  return (localStorage.getItem('theme') as Theme | null) ?? null
+}
+
+export async function saveTheme(theme: Theme): Promise<void> {
+  if (hasChrome) {
+    await chrome.storage.local.set({ theme })
+  } else {
+    localStorage.setItem('theme', theme)
+  }
+}
+
 /** Last declarativeNetRequest sync error reported by the background worker. */
 export async function loadSyncError(): Promise<string | null> {
   if (!hasChrome) return null
