@@ -1,4 +1,4 @@
-# Strata — Per-Site Header Rules
+# Header Editor - Modify Request & Response Headers
 
 类似 ModHeader 的 Chrome 扩展:修改 HTTP **请求头**、**响应头**,以及 **URL 重定向**。
 核心特性是 **按站点隔离**:规则按 Profile 组织,每个 Profile 有独立的作用域(Scope),

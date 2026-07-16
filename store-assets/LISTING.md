@@ -1,6 +1,6 @@
 # Chrome Web Store 发布材料
 
-上传包:`../strata-1.0.0.zip`(dist/ 打包,已确认不含测试文件)
+上传包:`../header-editor-1.1.1.zip`(dist/ 打包,已确认不含测试文件)
 截图:`screenshot-1.png`、`screenshot-2.png`(1280×800)
 商店图标:`../public/icons/icon128.png`
 
@@ -8,10 +8,10 @@
 
 ## Store listing(商店信息)
 
-**Name**: Strata — Per-Site Header Rules
+**Name**: Header Editor - Modify Request & Response Headers
 
 **Summary(132 字符内)**:
-Modify request & response headers and redirect URLs, with rules isolated per site. Set, append or strip any header.
+Modify HTTP request & response headers and redirect URLs. Set, append or strip any header, with rules isolated per site.
 
 **Category**: Developer Tools
 
@@ -20,9 +20,9 @@ Modify request & response headers and redirect URLs, with rules isolated per sit
 **Description**:
 
 ```
-Strata modifies HTTP request headers, response headers and redirect URLs —
-with one key difference: every rule lives in a profile that is scoped to a
-single site, so rules for one domain never leak into another.
+Header Editor modifies HTTP request headers, response headers and redirect
+URLs — with one key difference: every rule lives in a profile that is scoped
+to a single site, so rules for one domain never leak into another.
 
 FEATURES
 
@@ -41,14 +41,14 @@ FEATURES
 
 BUILT ON MANIFEST V3
 
-Strata uses Chrome's declarativeNetRequest API: headers are rewritten by
+Header Editor uses Chrome's declarativeNetRequest API: headers are rewritten by
 the browser's network layer. No content scripts are injected into pages,
 nothing slows your browsing down, and the extension cannot read the
 traffic it modifies.
 
 PRIVACY
 
-All data stays in your browser's local storage. Strata collects nothing,
+All data stays in your browser's local storage. Header Editor collects nothing,
 transmits nothing, and talks to no server.
 ```
 

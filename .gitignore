@@ -1,5 +1,5 @@
 node_modules/
 dist/
 .playwright-cli/
-strata-*.zip
+*.zip
 .DS_Store

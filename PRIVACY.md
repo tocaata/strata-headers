@@ -1,8 +1,8 @@
-# Privacy Policy — Strata (Per-Site Header Rules)
+# Privacy Policy — Header Editor (Modify Request & Response Headers)
 
 Last updated: 2026-07-10
 
-Strata does not collect, store, transmit or sell any user data.
+Header Editor does not collect, store, transmit or sell any user data.
 
 - All rule profiles you create are stored locally in your browser via
   `chrome.storage.local`. They never leave your device.

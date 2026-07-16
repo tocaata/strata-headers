@@ -117,7 +117,7 @@ export function App() {
           <div className="brand">
             <Logo />
             <div>
-              <h1>STRATA</h1>
+              <h1>HEADER EDITOR</h1>
               <p>PER-SITE HEADER CONTROL</p>
             </div>
           </div>
